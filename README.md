@@ -126,7 +126,7 @@ https://www.convertcsv.com/json-to-csv.htm
 
 
 
-ただし、これも一つ問題があって、`with`と`open`でで繰り返し処理を用いて一つのjsonに書き込む場合はきれいなjsonの形式を満たせなかったりするので、一工夫入ります。(手作業で修正するのもそんなに手間じゃないけど)
+ただし、これも一つ問題があって、`with`と`open`で繰り返し処理を用いて一つのjsonに書き込む場合はきれいなjsonの形式を満たせなかったりするので、一工夫入ります。(手作業で修正するのもそんなに手間じゃないけど)
 
 ----
 
@@ -134,31 +134,30 @@ https://www.convertcsv.com/json-to-csv.htm
 
 Twitter v2プラグインにおけるOauth2認証の流れとしては
 
-```planetext
 
-アプリ(Pythonスクリプト)を起動
 
-↓
+> アプリ(Pythonスクリプト)を起動
+> 
+> ↓
+> 
+> ブラウザが開かれTwitterの認証画面に遷移 (WindowsやOpenコマンドが入っていないLinux環境がどうなんだろう😳)
+> 
+> ↓
+> 
+> 認証
+> 
+> ↓
+> 
+> CallbackURIに遷移
+> 
+> ↓
+> 
+> アドレスバーより `https://github.com?state={文字列1}&code={文字列2}`という文字列が得られるのでこれを`Visit the following URL to authorize your App on behalf of your Twitter handle in a browser:`に続いてコマンドラインに貼り付ける。
+> 
+> ↓
+> 
+> リクエストとレスポンスが得られてコマンドライン上にコマンドライン上にjsonが表示される
 
-ブラウザが開かれTwitterの認証画面に遷移 (WindowsやOpenコマンドが入っていないLinux環境がどうなんだろう😳)
-
-↓
-
-認証
-
-↓
-
-CallbackURIに遷移
-
-↓
-
-アドレスバーより `https://github.com?state={文字列1}&code={文字列2}`という文字列が得られるのでこれを`Visit the following URL to authorize your App on behalf of your Twitter handle in a browser:`に続いてコマンドラインに貼り付ける。
-
-↓
-
-リクエストとレスポンスが得られてコマンドライン上にコマンドライン上にjsonが表示される
-
-```
 
 という感じです。
 
