@@ -92,7 +92,7 @@ redirect_uri = "https://www.example.com"
 
 を上記のコールバック用のURIに設定して保存するだけで動きます。
 
-結果をJsonで保存したかったので、`Respose`の`print`前後でファイル書き込みをしました。
+結果をJsonで保存したかったので、`Response`の`print`前後でファイル書き込みをしました。
 
 ```python
 with open("data.json", "w") as f:
